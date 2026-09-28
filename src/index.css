@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: #1c1714;
+  background: #f4efe7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --header-height: 78px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #f4efe7;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #f4efe7;
+}
+
+::selection {
+  background: #1c1714;
+  color: #f4efe7;
+}
+
+:focus-visible {
+  outline: 2px solid #a35d42;
+  outline-offset: 4px;
+}
+
+img {
+  display: block;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-[1480px] px-5 sm:px-8 lg:px-12 xl:px-16;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-clay;
+  }
+
+  .display-xl {
+    @apply font-display text-[clamp(3.6rem,9vw,9rem)] font-medium leading-[0.82] tracking-[-0.045em];
+  }
+
+  .display-lg {
+    @apply font-display text-[clamp(3rem,6vw,6.5rem)] font-medium leading-[0.9] tracking-[-0.04em];
+  }
+
+  .display-md {
+    @apply font-display text-[clamp(2.5rem,4.2vw,4.75rem)] font-medium leading-[0.95] tracking-[-0.035em];
+  }
+
+  .body-lg {
+    @apply text-[1.05rem] leading-8 text-ink/70 sm:text-lg;
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-cream transition duration-300 hover:-translate-y-0.5 hover:bg-clay focus-visible:outline-clay;
+  }
+
+  .button-light {
+    @apply inline-flex min-h-12 items-center justify-center rounded-full bg-cream px-6 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-white;
+  }
+
+  .button-outline {
+    @apply inline-flex min-h-12 items-center justify-center rounded-full border border-ink/20 px-6 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-cream;
+  }
+
+  .hairline {
+    @apply border-t border-ink/15;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
